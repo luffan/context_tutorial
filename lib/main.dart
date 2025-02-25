@@ -12,19 +12,18 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size.width;
-
     return MaterialApp(
       title: 'Flutter Demo',
-      supportedLocales: [
-        Locale('en', 'US'),
-        Locale('es', 'ES'),
-      ],
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: IntInheritedWidget(
+        data: 5,
+        child: const MyHomePage(
+          title: 'Flutter Demo Home Page',
+        ),
+      ),
     );
   }
 }
